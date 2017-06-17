@@ -24,7 +24,8 @@ class CostPlugin(octoprint.plugin.SettingsPlugin,
                         cost_per_time=1.50,
                         cost_per_length=0.08,
                         cost_per_weight=25,
-                        density_of_filament=1.25
+                        density_of_filament=1.25,
+                        check_cost=True
 		)
 
         def get_template_configs(self):
@@ -38,7 +39,8 @@ class CostPlugin(octoprint.plugin.SettingsPlugin,
                         cost_per_length=self._settings.get(["cost_per_length"]),
                         cost_per_weight=self._settings.get(["cost_per_weight"]),
                         density_of_filament=self._settings.get(["density_of_filament"]),
-                        currency=self._settings.get(["currency"])
+                        currency=self._settings.get(["currency"]),
+                        check_cost=self._settings.get(["check_cost"])
                 )
 
         def get_assets(self):
